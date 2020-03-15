@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:theme="@style/AppTheme"
+    tools:context=".StopWatchActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCircle"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bgcircle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAnchor"
+        android:layout_width="320dp"
+        android:layout_height="350dp"
+        android:src="@drawable/icanchor"
+        app:layout_constraintLeft_toLeftOf="@id/ivCircle"
+        app:layout_constraintRight_toRightOf="@id/ivCircle"
+        app:layout_constraintTop_toTopOf="@id/ivCircle"
+        app:layout_constraintBottom_toBottomOf="@id/ivCircle"/>
+    <Chronometer
+        android:id="@+id/chrono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="60sp"
+        app:layout_constraintTop_toBottomOf="@id/ivCircle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_stop"
+        android:layout_width="280dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/mmedium"
+        android:text="Finish"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textColor="#8A364D"
+        app:backgroundTint="#FF769A"
+        app:cornerRadius="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chrono"
+        app:layout_constraintVertical_bias="0.8"
+        android:onClick="finishTimer"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+        android:layout_width="280dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/mmedium"
+        android:text="Start Timer"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:backgroundTint="#48B9AC"
+        app:cornerRadius="26dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_stop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chrono"
+        app:layout_constraintVertical_bias="0.8"
+        android:onClick="startTimer"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
